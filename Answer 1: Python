@@ -1,0 +1,54 @@
+#Code 1:
+def find_highest_frequency_length(string):
+    # Remove punctuation and convert to lowercase
+    string = string.lower().replace(",", "").replace(".", "")
+    
+    # Split the string into words
+    words = string.split()
+    
+    # Count the frequency of each word
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    
+    # Find the highest frequency
+    max_frequency = max(frequency.values())
+    
+    # Find the length of the highest-frequency word
+    highest_frequency_length = max(len(word) for word, freq in frequency.items() if freq == max_frequency)
+    
+    return highest_frequency_length
+
+# Test the function
+input_string = "Hello world, hello people. How are you today? Hello, hello!"
+result = find_highest_frequency_length(input_string)
+print(result) 
+# Output: 5
+
+
+#Code 2:
+def find_highest_frequency_length(string):
+    # Remove punctuation and convert to lowercase
+    string = string.lower().replace(",", "").replace(".", "")
+    
+    # Split the string into words
+    words = string.split()
+    
+    # Count the frequency of each word
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    
+    # Find the highest frequency
+    max_frequency = max(frequency.values())
+    
+    # Find the length of the highest-frequency word
+    highest_frequency_length = max(len(word) for word, freq in frequency.items() if freq== max_frequency)
+    
+    return highest_frequency_length
+
+# Test the function
+input_string = "What I present here is what I remember of the letter, and what I remember of the letter I remember verbatim"
+result = find_highest_frequency_length(input_string)
+print(result)  
+# Output: 1
